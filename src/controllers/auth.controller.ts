@@ -59,7 +59,10 @@ export class AuthController {
   }
   static async logout(req: Request, res: Response) {
     res
-      .clearCookie("AccessToken")
+      .clearCookie("AccessToken", {
+        ...cookieOptions,
+        maxAge: 0,
+      })
       .json(new ApiResponse(200, { message: "Logged Out" }));
   }
 }
