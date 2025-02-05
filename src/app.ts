@@ -34,6 +34,8 @@ const io = new Server(server, {
   },
 });
 
+console.log("Frontend Url: ", process.env.FRONTEND_URL);
+
 app.use("/auth", authRouter);
 
 app.get(
