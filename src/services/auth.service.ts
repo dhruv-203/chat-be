@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { ApiError } from "../../utils/ApiError";
 import { db } from "../config/db";
 import { Gender, User } from "../entities/user";
