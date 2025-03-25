@@ -7,7 +7,7 @@ export async function getConnectedUsers(ConnectedUsers: {
   const connectedUsers = (
     await Promise.all(
       Object.keys(ConnectedUsers).map((key) => {
-        return getUserById(parseInt(key));
+        return getUserById(key);
       })
     )
   ).map((user) => {

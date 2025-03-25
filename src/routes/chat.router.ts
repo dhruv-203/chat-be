@@ -5,5 +5,5 @@ const chatRouter = Router();
 
 chatRouter.post("/sendMessage", ChatController.sendMessage);
 chatRouter.post("/getAllMessages", ChatController.getAllMessages);
-
+chatRouter.get("/videoCall", ChatController.videoCall);
 export { chatRouter };

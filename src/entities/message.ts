@@ -12,10 +12,10 @@ export class Message extends BaseEntity {
   id: number;
 
   @Column()
-  senderId: number;
+  senderId: string;
 
   @Column()
-  receiverId: number;
+  receiverId: string;
 
   @Column()
   message: string;

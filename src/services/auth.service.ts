@@ -46,7 +46,7 @@ export const loginUser = async (email: string, password: string) => {
   return { accessToken, user };
 };
 
-export const getUserById = async (id: number) => {
+export const getUserById = async (id: string) => {
   const user = await db.getRepository(User).findOne({ where: { id } });
   if (!user) {
     return new ApiError(404, "User not found on this id", []);

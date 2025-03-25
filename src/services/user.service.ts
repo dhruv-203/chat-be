@@ -14,3 +14,17 @@ export async function getAllUsers() {
     return new ApiError(500, "Internal Server Error", error);
   }
 }
+
+export async function getUserById(id: string) {
+  try {
+    const user = await db.getRepository(User).findOne({ where: { id } });
+    if (user) {
+      const { password, ...userData } = user;
+      return userData;
+    } else {
+      return new ApiError(404, "User not found", null);
+    }
+  } catch (error) {
+    return new ApiError(500, "Internal Server Error", error);
+  }
+}

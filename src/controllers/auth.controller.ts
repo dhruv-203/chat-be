@@ -55,7 +55,7 @@ export class AuthController {
         ...cookieOptions,
         maxAge: 24 * (60 * 60) * 1000, //24hrs
       })
-      .json(new ApiResponse(200, data.user));
+      .json(new ApiResponse(200, data));
   }
   static async logout(req: Request, res: Response) {
     res
